@@ -1,0 +1,79 @@
+* {
+    box-sizing: border;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(72deg, rgb(8, 0, 255) 1%, rgb(134, 234, 243) 99%);
+    font-family: bold, sans-serif;
+    color: #fff;
+}
+
+.container {
+    padding: 3% 10%;
+    text-align: right;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.container .heading {
+    font-size: 40px;
+    padding-bottom: 70px;
+    color: white font-semibold;
+    text-align: center;
+    text-shadow: 2px 8px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container #search-box {
+    text-align: center;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 12px 15px;
+    border: 3px solid black;
+    width: 600px;
+    margin: 20px auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.column {
+    flex: 1 0 25%;
+    max-width: 95%; /* Largura máxima do container da imagem */
+    text-align: center; /* Centralizar o conteúdo */
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 10px solid rgb(255, 255, 255);
+    cursor: pointer;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0.985);
+    background-color: #000000;
+    transition: transform 0.915s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.image img {
+    width: 100%; /* 100% da largura do container */
+    height: 570px; /* Altura fixa */
+    object-fit: cover; /* Encaixar a imagem sem distorcer */
+    border-radius: 10px;
+}
+
+.image h3 {
+    font-size: 23px;
+    margin-top: px;
+}
+

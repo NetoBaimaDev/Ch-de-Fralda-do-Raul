@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Galeria do Chá de Fraldas do Raul</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">Galeria do Chá de Fraldas do Raul</h1>
+        <div class="gallery" id="image-gallery"></div>
+
+    </div>
+    <script>
+       const images = [
+            { src: "images/1.jpg", alt: "PAPAI E MAMÃE" },
+            { src: "images/2.jpg", alt: "MEUS PAPAIS E VOVÔ E VOVÓ" },
+            { src: "images/3.jpg", alt: "VOVÔ, VOVÓ, PAPAI, MAMÃE E TITIA TAMIRIS" },
+            { src: "images/4.jpg", alt: "TITIO NETO, MAMÃE E PAPAI" },
+            { src: "images/5.jpg", alt: "MEUS PAPAIS E MINHA VOVÓ" },
+            { src: "images/6.jpg", alt: "OS TITIOS DA MINHA MAMÃE" },
+            { src: "images/7.jpg", alt: "MEU TITIO THALYSON, MAMÃE E PAPAI" },
+            { src: "images/8.jpg", alt: "MINHA BISA, A TITIA DA MAMÃE E A PRIMA DA MAMÃE" },
+            { src: "images/9.jpg", alt: "RAYSSA AMIGA DA MAMÃE" },
+            { src: "images/10.jpg", alt: "AMIGA DA MAMÃE" },
+            { src: "images/11.jpg", alt: "AMIGA DA MAMÃE" },
+            { src: "images/12.jpg", alt: "AMIGA DA MAMÃE" },
+            { src: "images/13.jpg", alt: "AMIGA DA MAMÃE" },
+            { src: "images/14.jpg", alt: "AMIGA DA MAMÃE" },
+            { src: "images/16.jpg", alt: "ARLANE AMIGA DA MAMÃE" },
+            { src: "images/17.jpg", alt: "RAYSSA E MEUS PAPAIS" },
+            { src: "images/18.jpg", alt: "FAMÍLIA DO PAPAI" },
+            { src: "images/19.jpg", alt: "RAYSSA, BOSQUIN E MEUS PAPAIS" },
+        ];
+
+        const titles = images.map(image => image.alt.toLowerCase());
+
+        const gallery = document.getElementById("image-gallery");
+
+        images.forEach((image, index) => {
+            const divColumn = document.createElement("div");
+            divColumn.classList.add("column");
+
+            const divImage = document.createElement("div");
+            divImage.classList.add("image");
+            divImage.dataset.title = `foto${index + 1}`;
+
+            const img = document.createElement("img");
+            img.src = image.src;
+            img.alt = image.alt;
+
+            const h3 = document.createElement("h3");
+            h3.textContent = image.alt;
+
+            divImage.appendChild(img);
+            divImage.appendChild(h3);
+            divColumn.appendChild(divImage);
+            gallery.appendChild(divColumn);
+        });
+
+        document.getElementById("search-box").addEventListener("input", function() {
+            const searchTerm = this.value.toLowerCase();
+            gallery.innerHTML = "";
+
+            images.forEach((image, index) => {
+                if (titles[index].includes(searchTerm)) {
+                    const divColumn = document.createElement("div");
+                    divColumn.classList.add("column");
+
+                    const divImage = document.createElement("div");
+                    divImage.classList.add("image");
+                    divImage.dataset.title = `foto${index + 1}`;
+
+                    const img = document.createElement("img");
+                    img.src = image.src;
+                    img.alt = image.alt;
+
+                    const h3 = document.createElement("h3");
+                    h3.textContent = image.alt;
+
+                    divImage.appendChild(img);
+                    divImage.appendChild(h3);
+                    divColumn.appendChild(divImage);
+                    gallery.appendChild(divColumn);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
