@@ -4,7 +4,7 @@
     margin: 0;
 
     /* Estilos para dispositivos de largura máxima de 768px (como smartphones) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1068px) {
     body {
         
     }
