@@ -2,17 +2,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
 
-body {
-    background: linear-gradient(72deg, rgb(8, 0, 255) 1%, rgb(134, 234, 243) 99%);
-    font-family: bold, sans-serif;
-    color: #fff;
-
-    font-size: 16px;
-}
-
-/* Estilos para dispositivos de largura máxima de 768px (como smartphones) */
+    /* Estilos para dispositivos de largura máxima de 768px (como smartphones) */
 @media only screen and (max-width: 768px) {
     body {
         
@@ -25,6 +16,17 @@ body {
         font-size: 18px;
 
     }
+    
+}
+
+body {
+    background: linear-gradient(72deg, rgb(8, 0, 255) 1%, rgb(134, 234, 243) 99%);
+    font-family: bold, sans-serif;
+    color: #fff;
+
+    font-size: 16px;
+}
+
 
 
 }
